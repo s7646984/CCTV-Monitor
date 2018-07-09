@@ -22,6 +22,7 @@ Partial Class Form2
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
         Me.btnSaveConfig = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -35,6 +36,7 @@ Partial Class Form2
         Me.PhotoStore = New System.Windows.Forms.FolderBrowserDialog()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.ToolTipSettings = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.txtPollRate, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -62,9 +64,9 @@ Partial Class Form2
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(12, 62)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(50, 13)
+        Me.Label2.Size = New System.Drawing.Size(76, 13)
         Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Poll Rate"
+        Me.Label2.Text = "Poll Rate (sec)"
         '
         'Label3
         '
@@ -91,6 +93,7 @@ Partial Class Form2
         Me.chkMuted.Name = "chkMuted"
         Me.chkMuted.Size = New System.Drawing.Size(15, 14)
         Me.chkMuted.TabIndex = 6
+        Me.ToolTipSettings.SetToolTip(Me.chkMuted, "If ticked the program will no longer Beep when" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "a new image is detected.")
         Me.chkMuted.UseVisualStyleBackColor = True
         '
         'chkStartMin
@@ -100,16 +103,20 @@ Partial Class Form2
         Me.chkStartMin.Name = "chkStartMin"
         Me.chkStartMin.Size = New System.Drawing.Size(15, 14)
         Me.chkStartMin.TabIndex = 7
+        Me.ToolTipSettings.SetToolTip(Me.chkStartMin, "The program will remain hidden when starting" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "and will be visible in the notifcat" & _
+        "ion bar." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "It will still alert you of new images.")
         Me.chkStartMin.UseVisualStyleBackColor = True
         '
         'txtPollRate
         '
         Me.txtPollRate.Location = New System.Drawing.Point(106, 55)
-        Me.txtPollRate.Maximum = New Decimal(New Integer() {240, 0, 0, 0})
+        Me.txtPollRate.Maximum = New Decimal(New Integer() {3600, 0, 0, 0})
         Me.txtPollRate.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.txtPollRate.Name = "txtPollRate"
         Me.txtPollRate.Size = New System.Drawing.Size(49, 20)
         Me.txtPollRate.TabIndex = 8
+        Me.ToolTipSettings.SetToolTip(Me.txtPollRate, "How often the program will check" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "your directory for new images and alert you." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "M" & _
+        "in: 1 second (Default), Max 3600 seconds")
         Me.txtPollRate.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'ChangeDirectory
@@ -137,7 +144,15 @@ Partial Class Form2
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(28, 13)
         Me.Label6.TabIndex = 11
-        Me.Label6.Text = "1.00"
+        Me.Label6.Text = "1.01"
+        '
+        'ToolTipSettings
+        '
+        Me.ToolTipSettings.AutoPopDelay = 3000
+        Me.ToolTipSettings.InitialDelay = 500
+        Me.ToolTipSettings.ReshowDelay = 100
+        Me.ToolTipSettings.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        Me.ToolTipSettings.ToolTipTitle = "Settings"
         '
         'Form2
         '
@@ -176,4 +191,5 @@ Partial Class Form2
     Friend WithEvents PhotoStore As System.Windows.Forms.FolderBrowserDialog
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents ToolTipSettings As System.Windows.Forms.ToolTip
 End Class
