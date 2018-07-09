@@ -32,6 +32,8 @@ Partial Class Form2
         Me.txtPollRate = New System.Windows.Forms.NumericUpDown()
         Me.ChangeDirectory = New System.Windows.Forms.Button()
         Me.PhotoStore = New System.Windows.Forms.FolderBrowserDialog()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.txtPollRate, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -118,11 +120,31 @@ Partial Class Form2
         Me.ChangeDirectory.Text = "Change Directory"
         Me.ChangeDirectory.UseVisualStyleBackColor = True
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(195, 244)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(48, 13)
+        Me.Label4.TabIndex = 10
+        Me.Label4.Text = "Version: "
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(240, 244)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(28, 13)
+        Me.Label6.TabIndex = 11
+        Me.Label6.Text = "1.00"
+        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(284, 261)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.ChangeDirectory)
         Me.Controls.Add(Me.txtPollRate)
         Me.Controls.Add(Me.chkStartMin)
@@ -150,4 +172,6 @@ Partial Class Form2
     Friend WithEvents txtPollRate As System.Windows.Forms.NumericUpDown
     Friend WithEvents ChangeDirectory As System.Windows.Forms.Button
     Friend WithEvents PhotoStore As System.Windows.Forms.FolderBrowserDialog
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
 End Class
