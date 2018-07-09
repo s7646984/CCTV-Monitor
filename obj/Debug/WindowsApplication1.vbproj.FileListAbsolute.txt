@@ -1,0 +1,10 @@
+C:\Users\James\AppData\Local\Temporary Projects\WindowsApplication1\bin\Debug\MotionWarning.exe.config
+C:\Users\James\AppData\Local\Temporary Projects\WindowsApplication1\obj\Debug\MotionWarning.Form1.resources
+C:\Users\James\AppData\Local\Temporary Projects\WindowsApplication1\obj\Debug\MotionWarning.Resources.resources
+C:\Users\James\AppData\Local\Temporary Projects\WindowsApplication1\obj\Debug\WindowsApplication1.vbproj.GenerateResource.Cache
+C:\Users\James\AppData\Local\Temporary Projects\WindowsApplication1\bin\Debug\MotionWarning.exe
+C:\Users\James\AppData\Local\Temporary Projects\WindowsApplication1\bin\Debug\MotionWarning.pdb
+C:\Users\James\AppData\Local\Temporary Projects\WindowsApplication1\bin\Debug\MotionWarning.xml
+C:\Users\James\AppData\Local\Temporary Projects\WindowsApplication1\obj\Debug\MotionWarning.exe
+C:\Users\James\AppData\Local\Temporary Projects\WindowsApplication1\obj\Debug\MotionWarning.xml
+C:\Users\James\AppData\Local\Temporary Projects\WindowsApplication1\obj\Debug\MotionWarning.pdb

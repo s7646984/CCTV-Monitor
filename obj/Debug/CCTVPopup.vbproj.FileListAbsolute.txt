@@ -1,0 +1,11 @@
+D:\Users\James\Documents\Github\CCTV Notifier\CCTVPopup\CCTVPopup\obj\Debug\CCTVPopup.vbproj.GenerateResource.Cache
+D:\Users\James\Documents\Github\CCTV Notifier\CCTVPopup\CCTVPopup\bin\Debug\CCTV Monitor.exe.config
+D:\Users\James\Documents\Github\CCTV Notifier\CCTVPopup\CCTVPopup\bin\Debug\CCTV Monitor.exe
+D:\Users\James\Documents\Github\CCTV Notifier\CCTVPopup\CCTVPopup\bin\Debug\CCTV Monitor.pdb
+D:\Users\James\Documents\Github\CCTV Notifier\CCTVPopup\CCTVPopup\bin\Debug\CCTV Monitor.xml
+D:\Users\James\Documents\Github\CCTV Notifier\CCTVPopup\CCTVPopup\obj\Debug\CCTV_Monitor.Form1.resources
+D:\Users\James\Documents\Github\CCTV Notifier\CCTVPopup\CCTVPopup\obj\Debug\CCTV_Monitor.Resources.resources
+D:\Users\James\Documents\Github\CCTV Notifier\CCTVPopup\CCTVPopup\obj\Debug\CCTV Monitor.exe
+D:\Users\James\Documents\Github\CCTV Notifier\CCTVPopup\CCTVPopup\obj\Debug\CCTV Monitor.xml
+D:\Users\James\Documents\Github\CCTV Notifier\CCTVPopup\CCTVPopup\obj\Debug\CCTV Monitor.pdb
+D:\Users\James\Documents\Github\CCTV Notifier\CCTVPopup\CCTVPopup\obj\Debug\CCTV_Monitor.Form2.resources
