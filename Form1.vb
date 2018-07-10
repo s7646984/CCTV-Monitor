@@ -64,6 +64,12 @@ Public Class Form1
 
     End Sub
 
+    Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        If (MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.No) Then
+            e.Cancel = True
+        End If
+    End Sub
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadConfig()
         CheckDirectory()
