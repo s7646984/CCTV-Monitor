@@ -141,4 +141,17 @@ Public Class Form1
 
     End Sub
 
+    Private Sub btnPause_Click(sender As Object, e As EventArgs) Handles btnPause.Click
+        CheckNew.Enabled = False
+        textbanner.Text = "Paused"
+        btnPause.Enabled = False
+        btnPlay.Enabled = True
+    End Sub
+
+    Private Sub btnPlay_Click(sender As Object, e As EventArgs) Handles btnPlay.Click
+        CheckNew.Enabled = Enabled
+        textbanner.Text = "No New Alerts"
+        btnPlay.Enabled = False
+        btnPause.Enabled = True
+    End Sub
 End Class
