@@ -41,6 +41,10 @@ Public Class Form1
             LatestPicture()                     'Determines what photo is the most recent and loads it into the picturebox
             Me.WindowState = FormWindowState.Normal 'Maxamises the window
             ShowInTaskbar = True    'Restores Taskbar Icon
+            lblTotalImages.Text = picturesinFolder
+            lblAlertTotal.Text = lblAlertTotal.Text + 1
+            lblLastAlert.Text = TimeOfDay
+
 
         End If
     End Sub
@@ -73,6 +77,8 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadConfig()
         CheckDirectory()
+        CheckNumberOfPhotos()
+        lblTotalImages.Text = picturesinFolder
         If StartMin Then
             Me.WindowState = FormWindowState.Minimized
             PictureBox1.Image = Nothing
