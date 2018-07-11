@@ -37,12 +37,14 @@ Partial Class Form2
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.ToolTipSettings = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.cmbImagetype = New System.Windows.Forms.ComboBox()
         CType(Me.txtPollRate, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnSaveConfig
         '
-        Me.btnSaveConfig.Location = New System.Drawing.Point(92, 198)
+        Me.btnSaveConfig.Location = New System.Drawing.Point(92, 217)
         Me.btnSaveConfig.Name = "btnSaveConfig"
         Me.btnSaveConfig.Size = New System.Drawing.Size(86, 23)
         Me.btnSaveConfig.TabIndex = 0
@@ -82,9 +84,9 @@ Partial Class Form2
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(11, 107)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(78, 13)
+        Me.Label5.Size = New System.Drawing.Size(81, 13)
         Me.Label5.TabIndex = 5
-        Me.Label5.Text = "Start Minimised"
+        Me.Label5.Text = "Start Minimised:"
         '
         'chkMuted
         '
@@ -121,11 +123,12 @@ Partial Class Form2
         '
         'ChangeDirectory
         '
-        Me.ChangeDirectory.Location = New System.Drawing.Point(15, 139)
+        Me.ChangeDirectory.Location = New System.Drawing.Point(12, 169)
         Me.ChangeDirectory.Name = "ChangeDirectory"
         Me.ChangeDirectory.Size = New System.Drawing.Size(125, 23)
         Me.ChangeDirectory.TabIndex = 9
         Me.ChangeDirectory.Text = "Change Directory"
+        Me.ToolTipSettings.SetToolTip(Me.ChangeDirectory, "Change the default image directory")
         Me.ChangeDirectory.UseVisualStyleBackColor = True
         '
         'Label4
@@ -154,11 +157,33 @@ Partial Class Form2
         Me.ToolTipSettings.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         Me.ToolTipSettings.ToolTipTitle = "Settings"
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(12, 130)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(69, 13)
+        Me.Label7.TabIndex = 12
+        Me.Label7.Text = "Image Type: "
+        '
+        'cmbImagetype
+        '
+        Me.cmbImagetype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbImagetype.FormattingEnabled = True
+        Me.cmbImagetype.Items.AddRange(New Object() {"jpg", "jpeg", "gif", "bmp", "wmf", "png"})
+        Me.cmbImagetype.Location = New System.Drawing.Point(87, 127)
+        Me.cmbImagetype.Name = "cmbImagetype"
+        Me.cmbImagetype.Size = New System.Drawing.Size(50, 21)
+        Me.cmbImagetype.TabIndex = 13
+        Me.ToolTipSettings.SetToolTip(Me.cmbImagetype, "Specify what format of image file the program should alert on")
+        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(284, 261)
+        Me.Controls.Add(Me.cmbImagetype)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.ChangeDirectory)
@@ -192,4 +217,6 @@ Partial Class Form2
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents ToolTipSettings As System.Windows.Forms.ToolTip
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents cmbImagetype As System.Windows.Forms.ComboBox
 End Class

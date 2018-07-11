@@ -37,12 +37,12 @@ Partial Class Form1
         Me.btnPlay = New System.Windows.Forms.Button()
         Me.pnlControls = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.lblTotalImages = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.lblLastAlert = New System.Windows.Forms.Label()
         Me.lblAlertTotal = New System.Windows.Forms.Label()
+        Me.lblLastAlert = New System.Windows.Forms.Label()
+        Me.lblTotalImages = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.ToolTipMain = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlControls.SuspendLayout()
@@ -155,20 +155,28 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Location = New System.Drawing.Point(395, 223)
+        Me.Panel1.Location = New System.Drawing.Point(393, 223)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(118, 157)
         Me.Panel1.TabIndex = 9
         '
-        'Label2
+        'lblAlertTotal
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(11, 66)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(47, 13)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Images: "
-        Me.ToolTipMain.SetToolTip(Me.Label2, "Total number of image files in the monitored directory")
+        Me.lblAlertTotal.AutoSize = True
+        Me.lblAlertTotal.Location = New System.Drawing.Point(54, 40)
+        Me.lblAlertTotal.Name = "lblAlertTotal"
+        Me.lblAlertTotal.Size = New System.Drawing.Size(13, 13)
+        Me.lblAlertTotal.TabIndex = 14
+        Me.lblAlertTotal.Text = "0"
+        '
+        'lblLastAlert
+        '
+        Me.lblLastAlert.AutoSize = True
+        Me.lblLastAlert.Location = New System.Drawing.Point(54, 53)
+        Me.lblLastAlert.Name = "lblLastAlert"
+        Me.lblLastAlert.Size = New System.Drawing.Size(10, 13)
+        Me.lblLastAlert.TabIndex = 13
+        Me.lblLastAlert.Text = "-"
         '
         'lblTotalImages
         '
@@ -178,16 +186,6 @@ Partial Class Form1
         Me.lblTotalImages.Size = New System.Drawing.Size(10, 13)
         Me.lblTotalImages.TabIndex = 10
         Me.lblTotalImages.Text = "-"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(19, 40)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(39, 13)
-        Me.Label3.TabIndex = 11
-        Me.Label3.Text = "Alerts: "
-        Me.ToolTipMain.SetToolTip(Me.Label3, "Total number of alerts recorded since the program was opened")
         '
         'Label4
         '
@@ -199,23 +197,25 @@ Partial Class Form1
         Me.Label4.Text = "Last Alert: "
         Me.ToolTipMain.SetToolTip(Me.Label4, "Time of last alert")
         '
-        'lblLastAlert
+        'Label2
         '
-        Me.lblLastAlert.AutoSize = True
-        Me.lblLastAlert.Location = New System.Drawing.Point(54, 53)
-        Me.lblLastAlert.Name = "lblLastAlert"
-        Me.lblLastAlert.Size = New System.Drawing.Size(10, 13)
-        Me.lblLastAlert.TabIndex = 13
-        Me.lblLastAlert.Text = "-"
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(11, 66)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(47, 13)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "Images: "
+        Me.ToolTipMain.SetToolTip(Me.Label2, "Total number of image files in the monitored directory")
         '
-        'lblAlertTotal
+        'Label3
         '
-        Me.lblAlertTotal.AutoSize = True
-        Me.lblAlertTotal.Location = New System.Drawing.Point(54, 40)
-        Me.lblAlertTotal.Name = "lblAlertTotal"
-        Me.lblAlertTotal.Size = New System.Drawing.Size(13, 13)
-        Me.lblAlertTotal.TabIndex = 14
-        Me.lblAlertTotal.Text = "0"
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(19, 40)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(39, 13)
+        Me.Label3.TabIndex = 11
+        Me.Label3.Text = "Alerts: "
+        Me.ToolTipMain.SetToolTip(Me.Label3, "Total number of alerts recorded since the program was opened")
         '
         'ToolTipMain
         '

@@ -30,6 +30,7 @@ Public Class Form1
     Public PollRate         'How oftne the program will check the folder (in milliseconds)
     Public Muted            'Is the beep on new alerts muted
     Public StartMin         'Start Program Minimised
+    Public Filetype         'Filetype that program will look for in directory, Default JPG. Supported: gif, jpg, jpeg, bmp, wmf, png
 
 
     Private Sub CheckNew_Tick(sender As Object, e As EventArgs) Handles CheckNew.Tick
@@ -60,7 +61,7 @@ Public Class Form1
 
     Private Sub CheckNumberOfPhotos()
 
-        picturesinFolder = Directory.GetFiles(dir, "*.jpg").Count   'Checking only for jpg images in folder, will expand at a later point in time
+        picturesinFolder = Directory.GetFiles(dir, Filetype).Count
 
         If priornumber > picturesinFolder Then  'If images are deleted from the folder, the count of numbers is reset without alerting the user
             priornumber = picturesinFolder
@@ -89,7 +90,7 @@ Public Class Form1
     End Sub
     Private Sub LatestPicture()
         Dim dirc = New System.IO.DirectoryInfo(dir)
-        Dim file = dirc.EnumerateFiles("*.jpg").
+        Dim file = dirc.EnumerateFiles(Filetype).
             OrderByDescending(Function(f) f.LastWriteTime).
             FirstOrDefault()    'Enumerate Over files in directory and order them by last write time. Latest file is selected
         If file IsNot Nothing Then
@@ -134,6 +135,7 @@ Public Class Form1
         Form2.txtPollRate.Value = PollRate / 1000   'Update setting information on setting page
         Form2.chkMuted.Checked = Muted
         Form2.chkStartMin.Checked = StartMin
+        Form2.cmbImagetype.Text = Filetype.remove(0, 2)
         Form2.Visible = True    'Opens Setting page
     End Sub
 
@@ -143,7 +145,9 @@ Public Class Form1
         PollRate = GetSetting("CCTV Monitor", "Config", "PollRate", 1000)
         Muted = GetSetting("CCTV Monitor", "Config", "Mute", False)
         StartMin = GetSetting("CCTV Monitor", "Config", "StartMinimised", False)
+        Filetype = GetSetting("CCTV Monitor", "Config", "FileType", "*.jpg")
         CheckNew.Interval = PollRate    'Updates the timer interval for polling
+
 
     End Sub
 
