@@ -29,6 +29,15 @@ Partial Class Form1
         Me.CheckNew = New System.Windows.Forms.Timer(Me.components)
         Me.btnDismiss = New System.Windows.Forms.Button()
         Me.NotifyIcon = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.ContextMenuStripIcon = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ToolStripMenuItemOpen = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItemImageDirectory = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PauseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MinutesToolStripMenuItemPause5 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MinutesToolStripMenuItemPause30 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HourToolStripMenuItemPause1Hour = New System.Windows.Forms.ToolStripMenuItem()
+        Me.IndefintlyToolStripMenuPauseIndef = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItemExit = New System.Windows.Forms.ToolStripMenuItem()
         Me.changeDirc = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.currentDirectory = New System.Windows.Forms.Label()
@@ -44,7 +53,9 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ToolTipMain = New System.Windows.Forms.ToolTip(Me.components)
+        Me.SleepTimer = New System.Windows.Forms.Timer(Me.components)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStripIcon.SuspendLayout()
         Me.pnlControls.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -86,9 +97,65 @@ Partial Class Form1
         Me.NotifyIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info
         Me.NotifyIcon.BalloonTipText = "Motion Detected"
         Me.NotifyIcon.BalloonTipTitle = "Motion Detected"
+        Me.NotifyIcon.ContextMenuStrip = Me.ContextMenuStripIcon
         Me.NotifyIcon.Icon = CType(resources.GetObject("NotifyIcon.Icon"), System.Drawing.Icon)
         Me.NotifyIcon.Text = "CCTV Monitor"
         Me.NotifyIcon.Visible = True
+        '
+        'ContextMenuStripIcon
+        '
+        Me.ContextMenuStripIcon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItemOpen, Me.ToolStripMenuItemImageDirectory, Me.PauseToolStripMenuItem, Me.ToolStripMenuItemExit})
+        Me.ContextMenuStripIcon.Name = "ContextMenuStripIcon"
+        Me.ContextMenuStripIcon.Size = New System.Drawing.Size(159, 114)
+        '
+        'ToolStripMenuItemOpen
+        '
+        Me.ToolStripMenuItemOpen.Name = "ToolStripMenuItemOpen"
+        Me.ToolStripMenuItemOpen.Size = New System.Drawing.Size(158, 22)
+        Me.ToolStripMenuItemOpen.Text = "Open"
+        '
+        'ToolStripMenuItemImageDirectory
+        '
+        Me.ToolStripMenuItemImageDirectory.Name = "ToolStripMenuItemImageDirectory"
+        Me.ToolStripMenuItemImageDirectory.Size = New System.Drawing.Size(158, 22)
+        Me.ToolStripMenuItemImageDirectory.Text = "Image Directory"
+        '
+        'PauseToolStripMenuItem
+        '
+        Me.PauseToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MinutesToolStripMenuItemPause5, Me.MinutesToolStripMenuItemPause30, Me.HourToolStripMenuItemPause1Hour, Me.IndefintlyToolStripMenuPauseIndef})
+        Me.PauseToolStripMenuItem.Name = "PauseToolStripMenuItem"
+        Me.PauseToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.PauseToolStripMenuItem.Text = "Pause"
+        '
+        'MinutesToolStripMenuItemPause5
+        '
+        Me.MinutesToolStripMenuItemPause5.Name = "MinutesToolStripMenuItemPause5"
+        Me.MinutesToolStripMenuItemPause5.Size = New System.Drawing.Size(152, 22)
+        Me.MinutesToolStripMenuItemPause5.Text = "5 Minutes"
+        '
+        'MinutesToolStripMenuItemPause30
+        '
+        Me.MinutesToolStripMenuItemPause30.Name = "MinutesToolStripMenuItemPause30"
+        Me.MinutesToolStripMenuItemPause30.Size = New System.Drawing.Size(152, 22)
+        Me.MinutesToolStripMenuItemPause30.Text = "30 Minutes"
+        '
+        'HourToolStripMenuItemPause1Hour
+        '
+        Me.HourToolStripMenuItemPause1Hour.Name = "HourToolStripMenuItemPause1Hour"
+        Me.HourToolStripMenuItemPause1Hour.Size = New System.Drawing.Size(152, 22)
+        Me.HourToolStripMenuItemPause1Hour.Text = "1 Hour"
+        '
+        'IndefintlyToolStripMenuPauseIndef
+        '
+        Me.IndefintlyToolStripMenuPauseIndef.Name = "IndefintlyToolStripMenuPauseIndef"
+        Me.IndefintlyToolStripMenuPauseIndef.Size = New System.Drawing.Size(152, 22)
+        Me.IndefintlyToolStripMenuPauseIndef.Text = "Indefinitely"
+        '
+        'ToolStripMenuItemExit
+        '
+        Me.ToolStripMenuItemExit.Name = "ToolStripMenuItemExit"
+        Me.ToolStripMenuItemExit.Size = New System.Drawing.Size(158, 22)
+        Me.ToolStripMenuItemExit.Text = "Exit"
         '
         'changeDirc
         '
@@ -223,6 +290,10 @@ Partial Class Form1
         Me.ToolTipMain.InitialDelay = 500
         Me.ToolTipMain.ReshowDelay = 100
         '
+        'SleepTimer
+        '
+        Me.SleepTimer.Interval = 1000
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -243,6 +314,7 @@ Partial Class Form1
         Me.Text = "CCTV Monitor"
         Me.TopMost = True
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStripIcon.ResumeLayout(False)
         Me.pnlControls.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -270,5 +342,15 @@ Partial Class Form1
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents ToolTipMain As System.Windows.Forms.ToolTip
+    Friend WithEvents ContextMenuStripIcon As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents ToolStripMenuItemOpen As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItemImageDirectory As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItemExit As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PauseToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents MinutesToolStripMenuItemPause5 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents MinutesToolStripMenuItemPause30 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents HourToolStripMenuItemPause1Hour As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents IndefintlyToolStripMenuPauseIndef As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SleepTimer As System.Windows.Forms.Timer
 
 End Class

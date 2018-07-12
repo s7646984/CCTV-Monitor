@@ -26,6 +26,7 @@
         SaveSetting(AppName:="CCTV Monitor", Section:="Config", Key:="PollRate", Setting:=txtPollRate.Value * 1000) 'Multiples seconds into miliseconds
         SaveSetting(AppName:="CCTV Monitor", Section:="Config", Key:="StartMinimised", Setting:=chkStartMin.Checked)
         SaveSetting(AppName:="CCTV Monitor", Section:="Config", Key:="FileType", Setting:="*." + cmbImagetype.Text)
+        SaveSetting(AppName:="CCTV Monitor", Section:="Config", Key:="Notification", Setting:=chkNotification.Checked)
         Form1.LoadConfig()
         Me.Visible = False  'Close Settings form
         Form1.Visible = True    'Open Main Dialog

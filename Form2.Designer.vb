@@ -37,14 +37,16 @@ Partial Class Form2
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.ToolTipSettings = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.cmbImagetype = New System.Windows.Forms.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.chkNotification = New System.Windows.Forms.CheckBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         CType(Me.txtPollRate, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnSaveConfig
         '
-        Me.btnSaveConfig.Location = New System.Drawing.Point(92, 217)
+        Me.btnSaveConfig.Location = New System.Drawing.Point(92, 250)
         Me.btnSaveConfig.Name = "btnSaveConfig"
         Me.btnSaveConfig.Size = New System.Drawing.Size(86, 23)
         Me.btnSaveConfig.TabIndex = 0
@@ -123,7 +125,7 @@ Partial Class Form2
         '
         'ChangeDirectory
         '
-        Me.ChangeDirectory.Location = New System.Drawing.Point(12, 169)
+        Me.ChangeDirectory.Location = New System.Drawing.Point(8, 187)
         Me.ChangeDirectory.Name = "ChangeDirectory"
         Me.ChangeDirectory.Size = New System.Drawing.Size(125, 23)
         Me.ChangeDirectory.TabIndex = 9
@@ -134,7 +136,7 @@ Partial Class Form2
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(195, 244)
+        Me.Label4.Location = New System.Drawing.Point(199, 277)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(48, 13)
         Me.Label4.TabIndex = 10
@@ -143,11 +145,11 @@ Partial Class Form2
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(240, 244)
+        Me.Label6.Location = New System.Drawing.Point(244, 277)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(28, 13)
+        Me.Label6.Size = New System.Drawing.Size(22, 13)
         Me.Label6.TabIndex = 11
-        Me.Label6.Text = "1.01"
+        Me.Label6.Text = "1.1"
         '
         'ToolTipSettings
         '
@@ -157,31 +159,53 @@ Partial Class Form2
         Me.ToolTipSettings.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         Me.ToolTipSettings.ToolTipTitle = "Settings"
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(12, 130)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(69, 13)
-        Me.Label7.TabIndex = 12
-        Me.Label7.Text = "Image Type: "
-        '
         'cmbImagetype
         '
         Me.cmbImagetype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbImagetype.FormattingEnabled = True
         Me.cmbImagetype.Items.AddRange(New Object() {"jpg", "jpeg", "gif", "bmp", "wmf", "png"})
-        Me.cmbImagetype.Location = New System.Drawing.Point(87, 127)
+        Me.cmbImagetype.Location = New System.Drawing.Point(83, 150)
         Me.cmbImagetype.Name = "cmbImagetype"
         Me.cmbImagetype.Size = New System.Drawing.Size(50, 21)
         Me.cmbImagetype.TabIndex = 13
         Me.ToolTipSettings.SetToolTip(Me.cmbImagetype, "Specify what format of image file the program should alert on")
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(8, 153)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(69, 13)
+        Me.Label7.TabIndex = 12
+        Me.Label7.Text = "Image Type: "
+        '
+        'chkNotification
+        '
+        Me.chkNotification.AutoSize = True
+        Me.chkNotification.Location = New System.Drawing.Point(105, 130)
+        Me.chkNotification.Name = "chkNotification"
+        Me.chkNotification.Size = New System.Drawing.Size(15, 14)
+        Me.chkNotification.TabIndex = 15
+        Me.ToolTipSettings.SetToolTip(Me.chkNotification, "The program will only alert you with a taskbar notification, it will not popup wi" & _
+        "th an image")
+        Me.chkNotification.UseVisualStyleBackColor = True
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(11, 130)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(87, 13)
+        Me.Label8.TabIndex = 14
+        Me.Label8.Text = "Notification Only:"
+        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 261)
+        Me.ClientSize = New System.Drawing.Size(284, 299)
+        Me.Controls.Add(Me.chkNotification)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.cmbImagetype)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
@@ -219,4 +243,6 @@ Partial Class Form2
     Friend WithEvents ToolTipSettings As System.Windows.Forms.ToolTip
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents cmbImagetype As System.Windows.Forms.ComboBox
+    Friend WithEvents chkNotification As System.Windows.Forms.CheckBox
+    Friend WithEvents Label8 As System.Windows.Forms.Label
 End Class
